@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="960" height="540" ></canvas>
+
+    <script>
+
+var canvas = document.getElementById('canvas'); // seleccionamos el elemento canvas
+var ctx = canvas.getContext('2d'); // seleccionamos el contexto 2d a partir del elemento
+
+ctx.lineWidth = 5; // Grosor de la linea
+
+var startx = 450; // Posicion X
+var starty = 100; // Posicion Y
+ctx.strokeStyle = 'red'; // el color de la linea, azul, se pueden usar colores en ingles, en formato hexadecimal, en rgb y rgba
+ctx.beginPath();
+ctx.arc(startx, starty, 20, 0, 2 * Math.PI); // Creamos un circulo para la cabeza. el orden de los parámetros son: posición x, posición y ancho y alto
+ctx.stroke();
+
+ctx.beginPath(); // Cuerpo
+ctx.moveTo(startx, starty+20);
+ctx.lineTo(startx, starty+100);
+ctx.stroke();
+
+ctx.beginPath(); // Dibujar mano izq
+ctx.moveTo(startx, starty+25);
+ctx.lineTo(startx-30, starty+60);
+ctx.stroke();
+
+ctx.beginPath(); // Dibujar mano der
+ctx.moveTo(startx, starty+25);
+ctx.lineTo(startx+30, starty+60);
+ctx.stroke();
+
+ctx.beginPath(); // Pie Izq
+ctx.moveTo(startx, starty+100);
+ctx.lineTo(startx-30, starty+150);
+ctx.stroke();
+
+ctx.beginPath(); // Pie der
+ctx.moveTo(startx, starty+100);
+ctx.lineTo(startx+30, starty+150);
+ctx.stroke();
+    </Script>
+    
+</body>
+</html>
